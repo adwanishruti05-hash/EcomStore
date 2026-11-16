@@ -212,7 +212,18 @@ const products = [
 ]
 
 
-const cart = []
+const CART_STORAGE_KEY = "ecomStoreCart"
+const cart = (() => {
+    try {
+        const savedCart = JSON.parse(localStorage.getItem(CART_STORAGE_KEY) || "[]")
+        return Array.isArray(savedCart)
+            ? savedCart.filter(item => item && Number.isFinite(Number(item.id)) && Number.isFinite(Number(item.quantity)) && Number(item.quantity) > 0)
+            : []
+    } catch (error) {
+        console.warn("Could not load saved cart:", error)
+        return []
+    }
+})()
 
 // helper function to escAPE HTML
 
@@ -550,7 +561,6 @@ const clearCartButton = document.getElementById("clearCart")
 
 // cart data
 
-// const cart = []
 
 // Add product to cart
 
@@ -581,6 +591,11 @@ function addTocart(productId) {
 
 
 function updateCart() {
+    try {
+        localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart))
+    } catch (error) {
+        console.warn("Could not save cart:", error)
+    }
     const totaItems = cart.reduce(
         (total,item) => total + item.quantity,
         0
