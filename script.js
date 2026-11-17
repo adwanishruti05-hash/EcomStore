@@ -198,15 +198,6 @@ const products = [
 
     },
 
-        {
-        id:13,
-        name:"Tu 13wa hai Shoes",
-        price:1999,
-        category:"fashion",
-        rating:3.5,
-        image:"https://assets.ajio.com/medias/sys_master/root/20250428/XRvn/680f3db77a6cd4182ffa4a8a/-473Wx593H-4944940230-multi-MODEL.jpg"
-
-    },
 
     
 ]
@@ -229,13 +220,7 @@ const cart = (() => {
 
 function escapeHTML(value) {
  return String(value).replace(/[&<>"']/g,character => {
-    // const entities = {
-    //     // "&": "&amp",
-    //     // "<": "&lt",
-    //     // ">": "&gt",
-    //     // '"': "&qout",
-    //     // "'": "&#39"
-    // }
+    const entities = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }
     return entities[character]
  })
 
@@ -386,11 +371,9 @@ function applyFilters() {
 
 
     // search filter
-    let filteredProducts = products.filter(product => {
-        return product.name
-        .toLowerCase()
-        .trim()
-    })
+    let filteredProducts = products.filter(product =>
+        product.name.toLowerCase().includes(searchTerm)
+    )
 
     // category filter
 
@@ -558,6 +541,15 @@ const closeCart = document.getElementById("closeCart")
 const cartItemsContainer = document.getElementById("cartItems")
 const cartTotal = document.getElementById("cartTotal")
 const clearCartButton = document.getElementById("clearCart")
+const checkoutModal = document.getElementById("checkoutModal")
+const checkoutButton = document.getElementById("checkoutButton")
+const closeCheckout = document.getElementById("closeCheckout")
+const checkoutForm = document.getElementById("checkoutForm")
+const checkoutItems = document.getElementById("checkoutItems")
+const checkoutTotal = document.getElementById("checkoutTotal")
+const successModal = document.getElementById("successModal")
+const successMessage = document.getElementById("successMessage")
+const continueShopping = document.getElementById("continueShopping")
 
 // cart data
 
@@ -724,6 +716,69 @@ cartItemsContainer.addEventListener("click" , function(event) {
 clearCartButton.addEventListener("click" , function() {
     cart.length = 0
     updateCart()
+})
+
+function formatPrice(amount) {
+    return `₹${Number(amount).toLocaleString("en-IN")}`
+}
+
+function openCheckout() {
+    if (cart.length === 0) {
+        alert("Add an item to your cart before checking out.")
+        return
+    }
+    checkoutItems.innerHTML = cart.map(item => `
+        <div class="checkout-item">
+            <span>${escapeHTML(item.name)} <small>× ${Number(item.quantity)}</small></span>
+            <strong>${formatPrice(Number(item.price) * Number(item.quantity))}</strong>
+        </div>
+    `).join("")
+    checkoutTotal.textContent = formatPrice(cart.reduce((sum, item) => sum + Number(item.price) * Number(item.quantity), 0))
+    cartModal.classList.add("hidden")
+    checkoutModal.classList.remove("hidden")
+    checkoutModal.setAttribute("aria-hidden", "false")
+    checkoutModal.querySelector("input")?.focus()
+}
+
+checkoutButton.addEventListener("click", openCheckout)
+closeCheckout.addEventListener("click", () => {
+    checkoutModal.classList.add("hidden")
+    checkoutModal.setAttribute("aria-hidden", "true")
+})
+checkoutModal.addEventListener("click", event => {
+    if (event.target === checkoutModal) closeCheckout.click()
+})
+
+checkoutForm.addEventListener("submit", event => {
+    event.preventDefault()
+    if (!checkoutForm.reportValidity() || cart.length === 0) return
+    const orderId = `EC-${Date.now().toString().slice(-8)}`
+    const customerName = checkoutForm.elements.name.value.trim()
+    successMessage.textContent = `Order ${orderId} is confirmed for ${customerName}. This was a demo payment; no charge was made.`
+    checkoutForm.reset()
+    cart.length = 0
+    updateCart()
+    checkoutModal.classList.add("hidden")
+    checkoutModal.setAttribute("aria-hidden", "true")
+    successModal.classList.remove("hidden")
+    successModal.setAttribute("aria-hidden", "false")
+    continueShopping.focus()
+})
+
+continueShopping.addEventListener("click", () => {
+    successModal.classList.add("hidden")
+    successModal.setAttribute("aria-hidden", "true")
+})
+successModal.addEventListener("click", event => {
+    if (event.target === successModal) continueShopping.click()
+})
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+        checkoutModal.classList.add("hidden")
+        checkoutModal.setAttribute("aria-hidden", "true")
+        successModal.classList.add("hidden")
+        successModal.setAttribute("aria-hidden", "true")
+    }
 })
 
 // initial cart display
