@@ -58,7 +58,7 @@ const products = [
 
 
     {
-        id:3,
+        id:4,
         name:"Running Shoes",
         price:1999,
         category:"fashion",
@@ -68,135 +68,60 @@ const products = [
     },
 
 
-
     {
-        id:1,
-        name:"Wireless Headphones",
-        price:1499,
-        category:"electronics",
-        rating:4.5,
-        image:"https://assets.ajio.com/medias/sys_master/root/20250428/XRvn/680f3db77a6cd4182ffa4a8a/-473Wx593H-4944940230-multi-MODEL.jpg"
-
-    },
-
-
-    {
-        id:2,
-        name:"Smart Watch",
-        price:1499,
-        category:"electronics",
-        rating:2.5,
-        image:"https://assets.ajio.com/medias/sys_master/root/20250428/XRvn/680f3db77a6cd4182ffa4a8a/-473Wx593H-4944940230-multi-MODEL.jpg"
-
+        id: 5,
+        name: "Laptop",
+        price: 1499,
+        category: "electronics",
+        rating: 4.5,
+        image: "https://m.media-amazon.com/images/I/510uTHyDqGL._AC_UF1000,1000_QL80_.jpg"
     },
 
     {
-        id:1,
-        name:"Wireless Headphones",
-        price:1499,
-        category:"electronics",
-        rating:4.5,
-        image:"https://assets.ajio.com/medias/sys_master/root/20250428/XRvn/680f3db77a6cd4182ffa4a8a/-473Wx593H-4944940230-multi-MODEL.jpg"
-
-    },
-
-
-    {
-        id:3,
-        name:"Running Shoes",
-        price:1999,
-        category:"fashion",
-        rating:3.5,
-        image:"https://assets.ajio.com/medias/sys_master/root/20250428/XRvn/680f3db77a6cd4182ffa4a8a/-473Wx593H-4944940230-multi-MODEL.jpg"
-
-    },
-
-
-    {
-        id:1,
-        name:"Wireless Headphones",
-        price:1499,
-        category:"electronics",
-        rating:4.5,
-        image:"https://assets.ajio.com/medias/sys_master/root/20250428/XRvn/680f3db77a6cd4182ffa4a8a/-473Wx593H-4944940230-multi-MODEL.jpg"
-
-    },
-
-
-    {
-        id:2,
-        name:"Smart Watch",
-        price:1499,
-        category:"electronics",
-        rating:2.5,
-        image:"https://assets.ajio.com/medias/sys_master/root/20250428/XRvn/680f3db77a6cd4182ffa4a8a/-473Wx593H-4944940230-multi-MODEL.jpg"
-
+        id: 6,
+        name: "Shoes",
+        price: 1499,
+        category: "fashion",
+        rating: 4.5,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNsb5maYpqnkwELPOXfaMugywhRNcCDn7PMO3FXtNA8Q&s=10"
     },
 
     {
-        id:1,
-        name:"Wireless Headphones",
-        price:1499,
-        category:"electronics",
-        rating:4.5,
-        image:"https://assets.ajio.com/medias/sys_master/root/20250428/XRvn/680f3db77a6cd4182ffa4a8a/-473Wx593H-4944940230-multi-MODEL.jpg"
-
-    },
-
-
-    {
-        id:3,
-        name:"Running Shoes",
-        price:1999,
-        category:"fashion",
-        rating:3.5,
-        image:"https://assets.ajio.com/medias/sys_master/root/20250428/XRvn/680f3db77a6cd4182ffa4a8a/-473Wx593H-4944940230-multi-MODEL.jpg"
-
-    },
-
-
-
-    {
-        id:1,
-        name:"Wireless Headphones",
-        price:1499,
-        category:"electronics",
-        rating:4.5,
-        image:"https://assets.ajio.com/medias/sys_master/root/20250428/XRvn/680f3db77a6cd4182ffa4a8a/-473Wx593H-4944940230-multi-MODEL.jpg"
-
-    },
-
-
-    {
-        id:2,
-        name:"Smart Watch",
-        price:1499,
-        category:"electronics",
-        rating:2.5,
-        image:"https://assets.ajio.com/medias/sys_master/root/20250428/XRvn/680f3db77a6cd4182ffa4a8a/-473Wx593H-4944940230-multi-MODEL.jpg"
-
+        id: 7,
+        name: "Shirts",
+        price: 1499,
+        category: "fashion",
+        rating: 4.5,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfESq2TPXUOBUmOH3xsNakOWyCDukxaseirRVr5kkb2w&s=10"
     },
 
     {
-        id:1,
-        name:"Wireless Headphones",
-        price:1499,
-        category:"electronics",
-        rating:4.5,
-        image:"https://assets.ajio.com/medias/sys_master/root/20250428/XRvn/680f3db77a6cd4182ffa4a8a/-473Wx593H-4944940230-multi-MODEL.jpg"
-
+        id: 8,
+        name: "Sun Glasses",
+        price: 999,
+        category: "fashion",
+        rating: 4.5,
+        image: "https://www.woggles.in/api/cache/catalog/products/woggles_new_image_9_12_2022/luminary_grey_polarized_square_sunglasses_base_27_05_2024_700x700.jpg"
     },
-
 
     {
-        id:3,
-        name:"Running Shoes",
-        price:1999,
-        category:"fashion",
-        rating:3.5,
-        image:"https://assets.ajio.com/medias/sys_master/root/20250428/XRvn/680f3db77a6cd4182ffa4a8a/-473Wx593H-4944940230-multi-MODEL.jpg"
-
+        id: 9,
+        name: "Tv",
+        price: 26999,
+        category: "electronics",
+        rating: 4.5,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvzL0maFgw3n5os3d1A0rp1rw_Wwg0vSdfBhgjulZzbw&s=10"
     },
+
+    {
+        id: 10,
+        name: "Keyboard",
+        price: 499,
+        category: "electronics",
+        rating: 4.5,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWHma9pM8IzqI-gAl46b_1Ec0MK7Xnvihe0DkRB5g98g&s=10"
+    },
+
 
 
     
