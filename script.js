@@ -23,109 +23,210 @@ const closeModal = document.getElementById("closeModal")
 // step 2 
 // Initial project data 
 
-const products = [ 
+
+const products = [
+
+    // =================================
+    // ELECTRONICS
+    // =================================
 
     {
-        id:1,
-        name:"Wireless Headphones",
-        price:1499,
-        category:"electronics",
-        rating:4.5,
-        image:"https://assets.ajio.com/medias/sys_master/root/20250428/XRvn/680f3db77a6cd4182ffa4a8a/-473Wx593H-4944940230-multi-MODEL.jpg"
-
-    },
-
-
-    {
-        id:2,
-        name:"Smart Watch",
-        price:1499,
-        category:"electronics",
-        rating:2.5,
-        image:"https://m.media-amazon.com/images/I/41szskqocrL._SY300_SX300_QL70_FMwebp_.jpg"
-
-    },
-
-    {
-        id:3,
-        name:"Iphone 17 pro",
-        price:124990,
-        category:"electronics",
-        rating:4.5,
-        image:"https://m.media-amazon.com/images/I/71JGCn1z1TL._SX679_.jpg"
-
-    },
-
-
-    {
-        id:4,
-        name:"Running Shoes",
-        price:1999,
-        category:"fashion",
-        rating:3.5,
-        image:"https://m.media-amazon.com/images/I/614H4OnDczL._SX695_.jpg"
-
-    },
-
-
-    {
-        id: 5,
-        name: "Laptop",
+        id: 1,
+        name: "Wireless Headphones",
         price: 1499,
         category: "electronics",
         rating: 4.5,
-        image: "https://m.media-amazon.com/images/I/510uTHyDqGL._AC_UF1000,1000_QL80_.jpg"
+        image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=900&q=85"
     },
 
     {
+        id: 2,
+        name: "Smart Watch",
+        price: 2499,
+        category: "electronics",
+        rating: 4.6,
+        image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=900&q=85"
+    },
+
+    {
+        id: 3,
+        name: "Smartphone",
+        price: 18999,
+        category: "electronics",
+        rating: 4.8,
+        image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=900&q=85"
+    },
+
+    {
+        id: 4,
+        name: "Bluetooth Speaker",
+        price: 1999,
+        category: "electronics",
+        rating: 4.3,
+        image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=900&q=85"
+    },
+
+    {
+        id: 5,
+        name: "Digital Camera",
+        price: 24999,
+        category: "electronics",
+        rating: 4.7,
+        image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=900&q=85"
+    },
+
+    // =================================
+    // FASHION
+    // =================================
+
+    {
         id: 6,
-        name: "Shoes",
-        price: 1499,
+        name: "Running Sneakers",
+        price: 1999,
         category: "fashion",
         rating: 4.5,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNsb5maYpqnkwELPOXfaMugywhRNcCDn7PMO3FXtNA8Q&s=10"
+        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=900&q=85"
     },
 
     {
         id: 7,
-        name: "Shirts",
-        price: 1499,
+        name: "Stylish Handbag",
+        price: 1599,
         category: "fashion",
-        rating: 4.5,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfESq2TPXUOBUmOH3xsNakOWyCDukxaseirRVr5kkb2w&s=10"
+        rating: 4.4,
+        image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=900&q=85"
     },
 
     {
         id: 8,
-        name: "Sun Glasses",
-        price: 999,
+        name: "Classic Sunglasses",
+        price: 899,
         category: "fashion",
-        rating: 4.5,
-        image: "https://www.woggles.in/api/cache/catalog/products/woggles_new_image_9_12_2022/luminary_grey_polarized_square_sunglasses_base_27_05_2024_700x700.jpg"
+        rating: 4.2,
+        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=900&q=85"
     },
 
     {
         id: 9,
-        name: "Tv",
-        price: 26999,
-        category: "electronics",
-        rating: 4.5,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvzL0maFgw3n5os3d1A0rp1rw_Wwg0vSdfBhgjulZzbw&s=10"
+        name: "Casual Denim Jacket",
+        price: 1799,
+        category: "fashion",
+        rating: 4.6,
+        image: "https://images.unsplash.com/photo-1543076447-215ad9ba6923?w=900&q=85"
     },
 
     {
         id: 10,
-        name: "Keyboard",
-        price: 499,
-        category: "electronics",
+        name: "Elegant Wrist Watch",
+        price: 1299,
+        category: "fashion",
         rating: 4.5,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWHma9pM8IzqI-gAl46b_1Ec0MK7Xnvihe0DkRB5g98g&s=10"
+        image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=900&q=85"
     },
 
+    // =================================
+    // COMPUTER ACCESSORIES
+    // =================================
+
+    {
+        id: 11,
+        name: "Laptop",
+        price: 45999,
+        category: "computer",
+        rating: 4.8,
+        image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=900&q=85"
+    },
+
+    {
+        id: 12,
+        name: "Mechanical Keyboard",
+        price: 2499,
+        category: "computer",
+        rating: 4.6,
+        image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=900&q=85"
+    },
+
+    {
+        id: 13,
+        name: "Wireless Mouse",
+        price: 799,
+        category: "computer",
+        rating: 4.3,
+        image: "https://images.unsplash.com/photo-1527814050087-3793815479db?w=900&q=85"
+    },
+
+    {
+        id: 14,
+        name: "Gaming Headset",
+        price: 2299,
+        category: "computer",
+        rating: 4.7,
+        image: "https://images.unsplash.com/photo-1599669454699-248893623440?w=900&q=85"
+    },
+
+    {
+        id: 15,
+        name: "Computer Monitor",
+        price: 12999,
+        category: "computer",
+        rating: 4.5,
+        image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=900&q=85"
+    },
+
+    // =================================
+    // HOME & LIVING
+    // =================================
+
+    {
+        id: 16,
+        name: "Modern Table Lamp",
+        price: 1199,
+        category: "home",
+        rating: 4.4,
+        image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=900&q=85"
+    },
+
+    {
+        id: 17,
+        name: "Comfortable Chair",
+        price: 4999,
+        category: "home",
+        rating: 4.7,
+        image: "https://images.unsplash.com/photo-1503602642458-232111445657?w=900&q=85"
+    },
+
+    {
+        id: 18,
+        name: "Indoor Plant",
+        price: 499,
+        category: "home",
+        rating: 4.5,
+        image: "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=900&q=85"
+    },
+
+    {
+        id: 19,
+        name: "Decorative Cushion",
+        price: 699,
+        category: "home",
+        rating: 4.2,
+        image: "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=900&q=85"
+    },
+
+    {
+        id: 20,
+        name: "Modern Sofa",
+        price: 18999,
+        category: "home",
+        rating: 4.8,
+        image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=900&q=85"
+    }
+
+];
 
 
     
-]
+
 
 
 const CART_STORAGE_KEY = "ecomStoreCart"
